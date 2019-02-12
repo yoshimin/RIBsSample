@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="NqK-6k-5kh">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Item View Controller-->
+        <scene sceneID="H15-fW-Bpq">
+            <objects>
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="NqK-6k-5kh" customClass="ItemViewController" customModule="RIBsSample" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="enY-uk-KuD">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="aPe-EL-mMS" customClass="MarkdownView" customModule="MarkdownView">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <subviews>
+                                    <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="dfN-nw-X4m">
+                                        <rect key="frame" x="177.5" y="323.5" width="20" height="20"/>
+                                    </activityIndicatorView>
+                                </subviews>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstItem="dfN-nw-X4m" firstAttribute="centerX" secondItem="aPe-EL-mMS" secondAttribute="centerX" id="AwF-46-3qS"/>
+                                    <constraint firstItem="dfN-nw-X4m" firstAttribute="centerY" secondItem="aPe-EL-mMS" secondAttribute="centerY" id="vdH-3R-BxQ"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstAttribute="bottom" secondItem="aPe-EL-mMS" secondAttribute="bottom" id="5S6-9J-HfJ"/>
+                            <constraint firstItem="aPe-EL-mMS" firstAttribute="leading" secondItem="enY-uk-KuD" secondAttribute="leading" id="gUs-08-aLq"/>
+                            <constraint firstItem="aPe-EL-mMS" firstAttribute="trailing" secondItem="enY-uk-KuD" secondAttribute="trailing" id="pQ4-ro-aLo"/>
+                            <constraint firstItem="aPe-EL-mMS" firstAttribute="top" secondItem="enY-uk-KuD" secondAttribute="top" id="pS7-oO-Gck"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="S0W-1t-bBC"/>
+                    </view>
+                    <connections>
+                        <outlet property="indicator" destination="dfN-nw-X4m" id="hUg-yK-38F"/>
+                        <outlet property="markdownView" destination="aPe-EL-mMS" id="lFj-Wc-TVq"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="aEE-vv-5LK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-514.39999999999998" y="88.605697151424295"/>
+        </scene>
+    </scenes>
+</document>

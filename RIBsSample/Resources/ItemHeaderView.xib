@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="nV0-Xb-o3q" customClass="ItemHeaderView" customModule="RIBsSample" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="375" height="150"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v5c-3G-6ht">
+                    <rect key="frame" x="16" y="16" width="50" height="50"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="50" id="V93-LT-1Za"/>
+                        <constraint firstAttribute="width" constant="50" id="cI8-s5-hdv"/>
+                    </constraints>
+                </imageView>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="@yoshiminu" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nqr-pM-yjO">
+                    <rect key="frame" x="70" y="16" width="289" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2019年02月07日" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gsv-Gz-57T">
+                    <rect key="frame" x="70" y="45" width="289" height="21"/>
+                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="クロスプラットフォームモバイルアーキテクチャ RIBs を触ってみる" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xMi-pd-AND">
+                    <rect key="frame" x="16" y="90" width="343" height="44"/>
+                    <fontDescription key="fontDescription" type="boldSystem" pointSize="17"/>
+                    <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <nil key="highlightedColor"/>
+                </label>
+            </subviews>
+            <color key="backgroundColor" red="0.40345138310000001" green="0.67542761559999998" blue="0.21162122489999999" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
+            <constraints>
+                <constraint firstItem="v5c-3G-6ht" firstAttribute="bottom" secondItem="Gsv-Gz-57T" secondAttribute="bottom" id="2Go-PG-SkV"/>
+                <constraint firstItem="xMi-pd-AND" firstAttribute="leading" secondItem="nV0-Xb-o3q" secondAttribute="leading" constant="16" id="7K8-N8-ZNS"/>
+                <constraint firstItem="v5c-3G-6ht" firstAttribute="top" secondItem="nqr-pM-yjO" secondAttribute="top" id="Dua-Tt-ieE"/>
+                <constraint firstItem="Gsv-Gz-57T" firstAttribute="leading" secondItem="nqr-pM-yjO" secondAttribute="leading" id="Qx2-7h-fnh"/>
+                <constraint firstAttribute="trailing" secondItem="nqr-pM-yjO" secondAttribute="trailing" constant="16" id="Uyk-um-WBi"/>
+                <constraint firstItem="v5c-3G-6ht" firstAttribute="top" secondItem="nqo-Ap-JXT" secondAttribute="top" constant="16" id="Vb6-8G-zmk"/>
+                <constraint firstItem="xMi-pd-AND" firstAttribute="top" secondItem="v5c-3G-6ht" secondAttribute="bottom" constant="24" id="WTZ-2l-7KG"/>
+                <constraint firstAttribute="trailing" secondItem="Gsv-Gz-57T" secondAttribute="trailing" constant="16" id="cS0-nD-uvV"/>
+                <constraint firstItem="v5c-3G-6ht" firstAttribute="leading" secondItem="nqo-Ap-JXT" secondAttribute="leading" constant="16" id="cme-6s-8SH"/>
+                <constraint firstAttribute="trailing" secondItem="xMi-pd-AND" secondAttribute="trailing" constant="16" id="ggV-5N-f2y"/>
+                <constraint firstItem="nqr-pM-yjO" firstAttribute="leading" secondItem="v5c-3G-6ht" secondAttribute="trailing" constant="4" id="hbJ-cs-L5W"/>
+                <constraint firstAttribute="bottom" secondItem="xMi-pd-AND" secondAttribute="bottom" constant="16" id="jSD-lS-syf"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="nqo-Ap-JXT"/>
+            <connections>
+                <outlet property="createdAtLabel" destination="Gsv-Gz-57T" id="Me1-J8-wfM"/>
+                <outlet property="titleLabel" destination="xMi-pd-AND" id="iTa-zq-gpo"/>
+                <outlet property="userIdLabel" destination="nqr-pM-yjO" id="yzT-LE-qKd"/>
+                <outlet property="userProfileImageView" destination="v5c-3G-6ht" id="AYX-1e-JVK"/>
+            </connections>
+        </view>
+    </objects>
+</document>
