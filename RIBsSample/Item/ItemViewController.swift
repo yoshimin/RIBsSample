@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import RIBs
 import Kingfisher
 import MarkdownView
 import RxSwift
@@ -27,7 +28,9 @@ class ItemHeaderView: UIView {
     }
 }
 
-class ItemViewController: UIViewController, ItemViewControllable {
+class ItemViewController: UIViewController, ItemPresentable {
+    var listener: ItemPresentableListener?
+    
     @IBOutlet private var markdownView: MarkdownView!
     @IBOutlet private var indicator: UIActivityIndicatorView!
 
@@ -48,6 +51,12 @@ class ItemViewController: UIViewController, ItemViewControllable {
 
         headerView.setup(with: item)
 
+        markdownView.onTouchLink = { [weak self] request in
+            if let url = request.url {
+                self?.listener?.openLink(url)
+            }
+            return false
+        }
         markdownView.load(markdown: item.body)
 
         guard let scrollView = markdownView.webview?.scrollView else { return }
@@ -61,6 +70,12 @@ class ItemViewController: UIViewController, ItemViewControllable {
             ])
 
         scrollView.contentInset = UIEdgeInsets(top: headerView.frame.height, left: 0, bottom: 0, right: 0)
+    }
+}
+
+extension ItemViewController: ItemViewControllable {
+    func present(view: ViewControllable) {
+        present(view.uiviewController, animated: true, completion: nil)
     }
 }
 

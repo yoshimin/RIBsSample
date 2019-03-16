@@ -9,13 +9,14 @@
 import RIBs
 
 protocol SearchBuildable: Buildable {
-    func build() -> NavigationBasedLaunchRouting
+    func build() -> ViewableRouting
 }
 
-class SearchBuilder: SearchBuildable {
-    func build() -> NavigationBasedLaunchRouting {
+class SearchBuilder: Builder<ItemsDependency>, SearchBuildable {
+    func build() -> ViewableRouting {
+        let component = ItemsComponent(dependency: dependency)
         let viewController = StoryboardScene.Search.initialScene.instantiate()
-        let interactor = SearchInteractor(presenter: viewController)
+        let interactor = SearchInteractor(presenter: viewController, mutableItemsStream: component.mutableStream)
         let itemBuilder = ItemBuilder()
         return SearchRouter(interactor: interactor, viewController: viewController, itemBuilder: itemBuilder)
     }

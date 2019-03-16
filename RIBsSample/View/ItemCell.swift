@@ -35,3 +35,13 @@ class ItemCell: UITableViewCell {
         onTapProfileImage?()
     }
 }
+
+extension UIView {
+    static var name: String {
+        let type: AnyClass = classForCoder()
+        return String(describing: type).components(separatedBy: ".").last!
+    }
+    static var nib: UINib {
+        return UINib(nibName: name, bundle: nil)
+    }
+}

@@ -16,7 +16,7 @@ class ItemBuilder: ItemBuildable {
     func build(item: Item) -> ViewableRouting {
         let viewController = StoryboardScene.Item.initialScene.instantiate()
         viewController.item = item
-        let interactor = ItemInteractor()
+        let interactor = ItemInteractor(presenter: viewController)
         return ItemRouter(interactor: interactor, viewController: viewController)
     }
 }

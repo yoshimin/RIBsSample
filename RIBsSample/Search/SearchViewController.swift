@@ -11,10 +11,8 @@ import RIBs
 import RxSwift
 import RxCocoa
 
-protocol SearchPresentableListener: class {
-    func search(with keyword: String) -> Single<Items>
-    func didSelectItem(_ item: Item)
-    func didSelectUser(_ user: User)
+protocol SearchPresentableListener: ItemListPresentableListener {
+    func search(with keyword: String)
 }
 
 class SearchViewController: UITableViewController, SearchPresentable {
@@ -26,9 +24,12 @@ class SearchViewController: UITableViewController, SearchPresentable {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "検索"
+        
         tableView.delegate = nil
         tableView.dataSource = nil
-
+        tableView.register(ItemCell.nib, forCellReuseIdentifier: ItemCell.name)
+        
         definesPresentationContext = true
         navigationItem.searchController = searchController
         navigationItem.hidesSearchBarWhenScrolling = false
@@ -37,27 +38,16 @@ class SearchViewController: UITableViewController, SearchPresentable {
             .withLatestFrom(searchController.searchBar.rx.text.orEmpty.asDriver())
 
         searchButtonClicked
-            .flatMap{ [weak self] text -> Single<Items> in
-                guard let listener = self?.listener else { return .just([]) }
-                return listener.search(with: text)
-            }
-            .catchError{ error -> Observable<[Item]> in
-                print(error.localizedDescription)
-                return .just([])
-            }
-            .bind(to: items)
-            .disposed(by: disposeBag)
-
-        searchButtonClicked
-            .subscribe(onNext: { _ in
+            .subscribe(onNext: { text in
+                self.listener?.search(with: text)
                 self.searchController.isActive = false
                 self.searchController.searchBar.text = nil
             })
             .disposed(by: disposeBag)
 
-        items
+        listener?.items
             .asObservable()
-            .bind(to: tableView.rx.items(cellIdentifier: "Cell", cellType: ItemCell.self)) { (_, item, cell) in
+            .bind(to: tableView.rx.items(cellIdentifier: ItemCell.name, cellType: ItemCell.self)) { (_, item, cell) in
                 cell.setup(with: item)
                 cell.onTapProfileImage = { [weak self] in
                     self?.listener?.didSelectUser(item.user)
@@ -74,11 +64,7 @@ class SearchViewController: UITableViewController, SearchPresentable {
     }
 }
 
-extension SearchViewController: SearchViewControllable {
-    func present(view: ViewControllable) {
-        navigationController?.pushViewController(view.uiviewController, animated: true)
-    }
-}
+extension SearchViewController: ItemListViewControllable {}
 
 extension Item: ItemCellModel {
     var userProfileImageURL: URL? {

@@ -13,9 +13,9 @@ struct GetItemsRequest: QiitaRequest {
 
     private let page: Int
     private let perPage: Int
-    private let query: String
+    private let query: String?
 
-    init(page: Int, perPage: Int, query: String) {
+    init(page: Int, perPage: Int, query: String?) {
         self.page = page
         self.perPage = perPage
         self.query = query
@@ -26,8 +26,11 @@ struct GetItemsRequest: QiitaRequest {
     var headerFields: [String:String] = [:]
 
     var queryParameters: [String:String]? {
-        return ["page": String(page),
-                "per_page": String(perPage),
-                "query": query]
+        var params = ["page": String(page),
+                      "per_page": String(perPage)]
+        if let query = query {
+            params["query"] = query
+        }
+        return params
     }
 }

@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SafariServices
 import RIBs
 
 extension UINavigationController: ViewControllable {
@@ -15,4 +16,8 @@ extension UINavigationController: ViewControllable {
     public convenience init(root: ViewControllable) {
         self.init(rootViewController: root.uiviewController)
     }
+}
+
+extension SFSafariViewController: ViewControllable {
+    public var uiviewController: UIViewController { return self }
 }
