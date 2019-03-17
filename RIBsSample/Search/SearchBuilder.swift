@@ -15,7 +15,7 @@ protocol SearchBuildable: Buildable {
 class SearchBuilder: Builder<ItemsDependency>, SearchBuildable {
     func build() -> ViewableRouting {
         let component = ItemsComponent(dependency: dependency)
-        let viewController = StoryboardScene.Search.initialScene.instantiate()
+        let viewController = SearchViewController(style: .plain)
         let interactor = SearchInteractor(presenter: viewController, mutableItemsStream: component.mutableStream)
         let itemBuilder = ItemBuilder()
         let userBuilder = UserBuilder(dependency: dependency)
