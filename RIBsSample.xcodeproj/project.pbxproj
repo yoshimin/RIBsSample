@@ -19,6 +19,13 @@
 		888A2DF3223D387D00ED73D3 /* RootComponent.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888A2DF2223D387D00ED73D3 /* RootComponent.swift */; };
 		888A2DF5223D3D9D00ED73D3 /* ItemCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 888A2DF4223D3D9D00ED73D3 /* ItemCell.xib */; };
 		888A2DFD223D4CEE00ED73D3 /* SearchRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888A2DFC223D4CEE00ED73D3 /* SearchRouter.swift */; };
+		888A2E03223E125600ED73D3 /* UserRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888A2DFF223E125600ED73D3 /* UserRouter.swift */; };
+		888A2E04223E125600ED73D3 /* UserViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888A2E00223E125600ED73D3 /* UserViewController.swift */; };
+		888A2E05223E125600ED73D3 /* UserBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888A2E01223E125600ED73D3 /* UserBuilder.swift */; };
+		888A2E06223E125600ED73D3 /* UserInteractor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888A2E02223E125600ED73D3 /* UserInteractor.swift */; };
+		888A2E0A223E134300ED73D3 /* UserHeaderView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 888A2E09223E134300ED73D3 /* UserHeaderView.xib */; };
+		888A2E0C223E1C2300ED73D3 /* UserHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888A2E0B223E1C2300ED73D3 /* UserHeaderView.swift */; };
+		888A2E0E223E1C3300ED73D3 /* UIView+nib.swift in Sources */ = {isa = PBXBuildFile; fileRef = 888A2E0D223E1C3300ED73D3 /* UIView+nib.swift */; };
 		8C2AFA0E220BE9F700942735 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C2AFA0C220BE9F600942735 /* LaunchScreen.storyboard */; };
 		8C2AFA0F220BE9F700942735 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8C2AFA0D220BE9F700942735 /* Search.storyboard */; };
 		8C2AFA11220BEA1600942735 /* ItemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8C2AFA10220BEA1600942735 /* ItemViewController.swift */; };
@@ -61,6 +68,13 @@
 		888A2DF2223D387D00ED73D3 /* RootComponent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootComponent.swift; sourceTree = "<group>"; };
 		888A2DF4223D3D9D00ED73D3 /* ItemCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ItemCell.xib; sourceTree = "<group>"; };
 		888A2DFC223D4CEE00ED73D3 /* SearchRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchRouter.swift; sourceTree = "<group>"; };
+		888A2DFF223E125600ED73D3 /* UserRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserRouter.swift; sourceTree = "<group>"; };
+		888A2E00223E125600ED73D3 /* UserViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserViewController.swift; sourceTree = "<group>"; };
+		888A2E01223E125600ED73D3 /* UserBuilder.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserBuilder.swift; sourceTree = "<group>"; };
+		888A2E02223E125600ED73D3 /* UserInteractor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserInteractor.swift; sourceTree = "<group>"; };
+		888A2E09223E134300ED73D3 /* UserHeaderView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = UserHeaderView.xib; sourceTree = "<group>"; };
+		888A2E0B223E1C2300ED73D3 /* UserHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserHeaderView.swift; sourceTree = "<group>"; };
+		888A2E0D223E1C3300ED73D3 /* UIView+nib.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+nib.swift"; sourceTree = "<group>"; };
 		8C2AFA0C220BE9F600942735 /* LaunchScreen.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = LaunchScreen.storyboard; sourceTree = "<group>"; };
 		8C2AFA0D220BE9F700942735 /* Search.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		8C2AFA10220BEA1600942735 /* ItemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemViewController.swift; sourceTree = "<group>"; };
@@ -149,6 +163,17 @@
 			path = ItemList;
 			sourceTree = "<group>";
 		};
+		888A2DFE223E124100ED73D3 /* User */ = {
+			isa = PBXGroup;
+			children = (
+				888A2DFF223E125600ED73D3 /* UserRouter.swift */,
+				888A2E00223E125600ED73D3 /* UserViewController.swift */,
+				888A2E01223E125600ED73D3 /* UserBuilder.swift */,
+				888A2E02223E125600ED73D3 /* UserInteractor.swift */,
+			);
+			path = User;
+			sourceTree = "<group>";
+		};
 		8C2AFA3A22129EA600942735 /* SwiftGen */ = {
 			isa = PBXGroup;
 			children = (
@@ -174,6 +199,8 @@
 				8C2AFA2E220D84F200942735 /* NavigationBasedLaunchRouter.swift */,
 				8CD0B0CC2201889300F032A9 /* UIViewController+RIB.swift */,
 				8CD0B0FE2204393900F032A9 /* ItemCell.swift */,
+				888A2E0B223E1C2300ED73D3 /* UserHeaderView.swift */,
+				888A2E0D223E1C3300ED73D3 /* UIView+nib.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -187,6 +214,7 @@
 				8C3C683C220BDC5F00967EDB /* Item.storyboard */,
 				8C2AFA3622128C7100942735 /* ItemHeaderView.xib */,
 				888A2DF4223D3D9D00ED73D3 /* ItemCell.xib */,
+				888A2E09223E134300ED73D3 /* UserHeaderView.xib */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -212,19 +240,20 @@
 		8CD0B0A422002A6000F032A9 /* RIBsSample */ = {
 			isa = PBXGroup;
 			children = (
-				888A2DE7223CFE1D00ED73D3 /* ItemList */,
 				8CD0B0D92202E0BE00F032A9 /* API */,
 				8CD0B0A522002A6000F032A9 /* AppDelegate.swift */,
 				8C2AFA1B220C154300942735 /* DateFormatter.swift */,
 				8CD0B0B122002A6100F032A9 /* Info.plist */,
 				888A2DE6223CFCAC00ED73D3 /* Item */,
+				888A2DE7223CFE1D00ED73D3 /* ItemList */,
 				8CD0B0DA2202E0DB00F032A9 /* Model */,
 				8C3C6835220BDB5700967EDB /* Newest */,
 				8C3C6839220BDBBA00967EDB /* Resources */,
+				888A2DF2223D387D00ED73D3 /* RootComponent.swift */,
 				888A2DE5223CFC7F00ED73D3 /* Search */,
 				8C2AFA3A22129EA600942735 /* SwiftGen */,
+				888A2DFE223E124100ED73D3 /* User */,
 				8C3C6838220BDBAA00967EDB /* View */,
-				888A2DF2223D387D00ED73D3 /* RootComponent.swift */,
 			);
 			path = RIBsSample;
 			sourceTree = "<group>";
@@ -315,6 +344,7 @@
 				8C3C683D220BDC5F00967EDB /* Item.storyboard in Resources */,
 				888A2DF5223D3D9D00ED73D3 /* ItemCell.xib in Resources */,
 				8CD0B0AD22002A6100F032A9 /* Assets.xcassets in Resources */,
+				888A2E0A223E134300ED73D3 /* UserHeaderView.xib in Resources */,
 				8C2AFA0F220BE9F700942735 /* Search.storyboard in Resources */,
 				8C2AFA3722128C7100942735 /* ItemHeaderView.xib in Resources */,
 			);
@@ -405,6 +435,8 @@
 				888A2DE1223CFC7400ED73D3 /* NewestRouter.swift in Sources */,
 				888A2DE3223CFC7400ED73D3 /* NewestBuilder.swift in Sources */,
 				888A2DEF223D2DA500ED73D3 /* ItemListBuilder.swift in Sources */,
+				888A2E0C223E1C2300ED73D3 /* UserHeaderView.swift in Sources */,
+				888A2E0E223E1C3300ED73D3 /* UIView+nib.swift in Sources */,
 				888A2DFD223D4CEE00ED73D3 /* SearchRouter.swift in Sources */,
 				8C2AFA1C220C154300942735 /* DateFormatter.swift in Sources */,
 				8C2AFA17220BF88400942735 /* ItemRouter.swift in Sources */,
@@ -414,12 +446,16 @@
 				8CD0B0BA2200335600F032A9 /* SearchViewController.swift in Sources */,
 				888A2DEB223D027000ED73D3 /* ItemListInteractor.swift in Sources */,
 				8C3C683B220BDBEC00967EDB /* ItemBuilder.swift in Sources */,
+				888A2E06223E125600ED73D3 /* UserInteractor.swift in Sources */,
 				8CD0B0A622002A6000F032A9 /* AppDelegate.swift in Sources */,
 				8CD0B0CD2201889300F032A9 /* UIViewController+RIB.swift in Sources */,
+				888A2E04223E125600ED73D3 /* UserViewController.swift in Sources */,
 				888A2DE2223CFC7400ED73D3 /* NewestViewController.swift in Sources */,
 				8CD0B0D1220195B800F032A9 /* Session.swift in Sources */,
+				888A2E05223E125600ED73D3 /* UserBuilder.swift in Sources */,
 				8CD0B0CF220192A600F032A9 /* QiitaRequest.swift in Sources */,
 				8C2AFA11220BEA1600942735 /* ItemViewController.swift in Sources */,
+				888A2E03223E125600ED73D3 /* UserRouter.swift in Sources */,
 				888A2DF1223D2EE400ED73D3 /* ItemsStream.swift in Sources */,
 				888A2DE4223CFC7400ED73D3 /* NewestInteractor.swift in Sources */,
 				8C2AFA15220BECFD00942735 /* ItemInteractor.swift in Sources */,

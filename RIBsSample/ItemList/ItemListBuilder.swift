@@ -12,7 +12,7 @@ protocol ItemsDependency: Dependency {
     var repository: ItemsRepository { get }
 }
 
-final class ItemsComponent: Component<ItemsDependency> {
+class ItemsComponent: Component<ItemsDependency> {
     let repository: ItemsRepository
     
     var mutableStream: MutableItemsStream {

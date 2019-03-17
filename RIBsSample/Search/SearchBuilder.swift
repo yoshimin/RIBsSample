@@ -18,6 +18,7 @@ class SearchBuilder: Builder<ItemsDependency>, SearchBuildable {
         let viewController = StoryboardScene.Search.initialScene.instantiate()
         let interactor = SearchInteractor(presenter: viewController, mutableItemsStream: component.mutableStream)
         let itemBuilder = ItemBuilder()
-        return SearchRouter(interactor: interactor, viewController: viewController, itemBuilder: itemBuilder)
+        let userBuilder = UserBuilder(dependency: dependency)
+        return SearchRouter(interactor: interactor, viewController: viewController, itemBuilder: itemBuilder, userBuilder: userBuilder)
     }
 }

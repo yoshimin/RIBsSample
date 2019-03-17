@@ -1,8 +1,8 @@
 //
-//  NewestViewController.swift
+//  UserViewController.swift
 //  RIBsSample
 //
-//  Created by Yoshimi Shingai on 2019/03/16.
+//  Created by Yoshimi Shingai on 2019/03/17.
 //  Copyright © 2019 SHINGAI YOSHIMI. All rights reserved.
 //
 
@@ -11,31 +11,35 @@ import RxSwift
 import RxCocoa
 import UIKit
 
-protocol NewestPresentableListener: ItemListPresentableListener {
-    func didTapSearchButton()
+protocol UserPresentableListener: ItemListPresentableListener {
+    
 }
 
-final class NewestViewController: UITableViewController, NewestPresentable {
+final class UserViewController: UITableViewController, UserPresentable {
     private let disposeBag = DisposeBag()
-    private let searchButton = UIBarButtonItem(barButtonSystemItem: .search, target: nil, action: nil)
+    private let user: User
+    private let headerView = UserHeaderView.nib.instantiate(withOwner: nil, options: nil).first as! UserHeaderView
     
-    weak var listener: NewestPresentableListener?
+    weak var listener: UserPresentableListener?
+    
+    init(user: User) {
+        self.user = user
+        super.init(style: .plain)
+    }
+    
+    required init?(coder aDecoder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = "新着"
-        navigationItem.rightBarButtonItem = searchButton
-        searchButton.rx.tap
-            .subscribe(onNext: { [weak self] _ in
-                self?.listener?.didTapSearchButton()
-            })
-            .disposed(by: disposeBag)
-        
         
         tableView.delegate = nil
         tableView.dataSource = nil
         tableView.register(ItemCell.nib, forCellReuseIdentifier: ItemCell.name)
+        tableView.tableHeaderView = headerView
         tableView.tableFooterView = UIView()
+        headerView.setup(with: user)
         
         listener?.items
             .asObservable()
@@ -56,4 +60,10 @@ final class NewestViewController: UITableViewController, NewestPresentable {
     }
 }
 
-extension NewestViewController: ItemListViewControllable {}
+extension UserViewController: ItemListViewControllable {}
+
+extension User: UserHeaderViewModel {
+    var imageURL: URL? {
+        return URL(string: profileImageURL)
+    }
+}

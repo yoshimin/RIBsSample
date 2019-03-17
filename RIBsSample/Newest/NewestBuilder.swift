@@ -22,7 +22,8 @@ final class NewestBuilder: Builder<ItemsDependency>, NewestBuildable {
         let viewController = NewestViewController(style: .plain)
         let interactor = NewestInteractor(presenter: viewController, mutableItemsStream: component.mutableStream)
         let itemBuilder = ItemBuilder()
+        let userBuilder = UserBuilder(dependency: dependency)
         let searchBuilder = SearchBuilder(dependency: dependency)
-        return NewestRouter(interactor: interactor, viewController: viewController, itemBuilder: itemBuilder, searchBuilder: searchBuilder)
+        return NewestRouter(interactor: interactor, viewController: viewController, itemBuilder: itemBuilder, userBuilder: userBuilder, searchBuilder: searchBuilder)
     }
 }

@@ -15,7 +15,7 @@ protocol ItemsStream: class {
 }
 
 protocol MutableItemsStream: ItemsStream {
-    func fetch(page: Int, perPage: Int, query: String?)
+    func fetch(page: Int?, perPage: Int?, query: String?)
 }
 
 class ItemsStreamImpl: MutableItemsStream {
@@ -33,7 +33,7 @@ class ItemsStreamImpl: MutableItemsStream {
             .distinctUntilChanged()
     }
     
-    func fetch(page: Int, perPage: Int, query: String?) {
+    func fetch(page: Int?, perPage: Int?, query: String?) {
         repository.fetch(page: page, perPage: perPage, query: query)
             .subscribe(onSuccess: { [weak self] items in
                 self?._items.accept(items)

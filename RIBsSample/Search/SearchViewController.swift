@@ -29,6 +29,7 @@ class SearchViewController: UITableViewController, SearchPresentable {
         tableView.delegate = nil
         tableView.dataSource = nil
         tableView.register(ItemCell.nib, forCellReuseIdentifier: ItemCell.name)
+        tableView.tableFooterView = UIView()
         
         definesPresentationContext = true
         navigationItem.searchController = searchController

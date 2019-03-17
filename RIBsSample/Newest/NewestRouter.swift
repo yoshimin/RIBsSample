@@ -14,13 +14,16 @@ protocol NewestInteractable: Interactable {
 
 class NewestRouter: NavigationBasedLaunchRouter<(NewestInteractable & ItemListInteractable), ItemListViewControllable> {
     let itemBuilder: ItemBuildable
+    let userBuilder: UserBuildable
     let searchBuilder: SearchBuildable
     
     init(interactor: (NewestInteractable & ItemListInteractable),
          viewController: ItemListViewControllable,
          itemBuilder: ItemBuildable,
+         userBuilder: UserBuildable,
          searchBuilder: SearchBuildable) {
         self.itemBuilder = itemBuilder
+        self.userBuilder = userBuilder
         self.searchBuilder = searchBuilder
         super.init(interactor: interactor, viewController: viewController)
         interactor.itemListRouter = self
@@ -28,18 +31,7 @@ class NewestRouter: NavigationBasedLaunchRouter<(NewestInteractable & ItemListIn
     }
 }
 
-extension NewestRouter: ItemListRouting {
-    func route(toItem item: Item) {
-        let router = itemBuilder.build(item: item)
-        attachChild(router)
-        
-        viewController.present(view: router.viewControllable)
-    }
-    
-    func route(toUser user: User) {
-        
-    }
-}
+extension NewestRouter: ItemListRouting, HasItemListViewControllable {}
 extension NewestRouter: NewestRouting {
     func routeToSearch() {
         let router = searchBuilder.build()

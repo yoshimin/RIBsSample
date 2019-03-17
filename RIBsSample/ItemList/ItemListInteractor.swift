@@ -11,6 +11,7 @@ import RxSwift
 
 protocol ItemListRouting: ViewableRouting {
     var itemBuilder: ItemBuildable { get }
+    var userBuilder: UserBuildable { get }
     
     func route(toItem item: Item)
     func route(toUser user: User)

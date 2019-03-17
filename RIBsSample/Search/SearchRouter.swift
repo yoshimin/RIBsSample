@@ -10,26 +10,14 @@ import RIBs
 
 class SearchRouter: ViewableRouter<ItemListInteractable, ItemListViewControllable> {
     let itemBuilder: ItemBuildable
+    let userBuilder: UserBuildable
     
-    init(interactor: ItemListInteractable,
-         viewController: ItemListViewControllable,
-         itemBuilder: ItemBuildable) {
+    init(interactor: ItemListInteractable, viewController: ItemListViewControllable, itemBuilder: ItemBuildable, userBuilder: UserBuildable) {
         self.itemBuilder = itemBuilder
+        self.userBuilder = userBuilder
         super.init(interactor: interactor, viewController: viewController)
         interactor.itemListRouter = self
     }
 }
 
-extension SearchRouter: ItemListRouting {
-    func route(toItem item: Item) {
-        let router = itemBuilder.build(item: item)
-        attachChild(router)
-        
-        viewController.present(view: router.viewControllable)
-    }
-    
-    func route(toUser user: User) {
-        
-    }
-}
-
+extension SearchRouter: ItemListRouting, HasItemListViewControllable {}

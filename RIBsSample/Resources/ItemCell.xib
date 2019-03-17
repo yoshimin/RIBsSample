@@ -12,33 +12,33 @@
         <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
         <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" rowHeight="74" id="JBf-RB-A8k" customClass="ItemCell" customModule="RIBsSample" customModuleProvider="target">
-            <rect key="frame" x="0.0" y="0.0" width="375" height="74"/>
+            <rect key="frame" x="0.0" y="0.0" width="375" height="82"/>
             <autoresizingMask key="autoresizingMask"/>
             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="JBf-RB-A8k" id="EyD-e8-A2b">
-                <rect key="frame" x="0.0" y="0.0" width="375" height="73.5"/>
+                <rect key="frame" x="0.0" y="0.0" width="375" height="81.5"/>
                 <autoresizingMask key="autoresizingMask"/>
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="uTH-JH-SRn">
-                        <rect key="frame" x="16" y="8" width="50" height="50"/>
+                        <rect key="frame" x="16" y="12" width="50" height="50"/>
                         <constraints>
                             <constraint firstAttribute="height" constant="50" id="79h-r8-IBz"/>
                             <constraint firstAttribute="width" constant="50" id="gAk-Lg-CKc"/>
                         </constraints>
                     </imageView>
                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="61P-1x-zOX">
-                        <rect key="frame" x="16" y="8" width="50" height="50"/>
+                        <rect key="frame" x="16" y="12" width="50" height="50"/>
                         <connections>
                             <action selector="touchUpProfileImageView" destination="JBf-RB-A8k" eventType="touchUpInside" id="kOt-1q-eWk"/>
                         </connections>
                     </button>
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Vwp-Lo-by4">
-                        <rect key="frame" x="74" y="8" width="285" height="14.5"/>
+                        <rect key="frame" x="74" y="12" width="285" height="14.5"/>
                         <fontDescription key="fontDescription" type="boldSystem" pointSize="12"/>
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
                     <stackView opaque="NO" contentMode="scaleToFill" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="cPf-cj-66h">
-                        <rect key="frame" x="74" y="53.5" width="61" height="12"/>
+                        <rect key="frame" x="74" y="57.5" width="61" height="12"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="seT-yG-m5n">
                                 <rect key="frame" x="0.0" y="0.0" width="26.5" height="12"/>
@@ -61,14 +61,14 @@
                     <constraint firstItem="61P-1x-zOX" firstAttribute="trailing" secondItem="uTH-JH-SRn" secondAttribute="trailing" id="KTj-Hf-vX0"/>
                     <constraint firstItem="61P-1x-zOX" firstAttribute="leading" secondItem="uTH-JH-SRn" secondAttribute="leading" id="KkR-Qn-gSf"/>
                     <constraint firstItem="cPf-cj-66h" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Vwp-Lo-by4" secondAttribute="bottom" constant="4" id="LZb-zG-sWt"/>
-                    <constraint firstItem="uTH-JH-SRn" firstAttribute="top" secondItem="EyD-e8-A2b" secondAttribute="top" constant="8" id="OAL-Lk-aWl"/>
+                    <constraint firstItem="uTH-JH-SRn" firstAttribute="top" secondItem="EyD-e8-A2b" secondAttribute="top" constant="12" id="OAL-Lk-aWl"/>
                     <constraint firstItem="uTH-JH-SRn" firstAttribute="leading" secondItem="EyD-e8-A2b" secondAttribute="leading" constant="16" id="POg-bB-YaU"/>
                     <constraint firstItem="61P-1x-zOX" firstAttribute="bottom" secondItem="uTH-JH-SRn" secondAttribute="bottom" id="Y8S-7v-rmK"/>
-                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="uTH-JH-SRn" secondAttribute="bottom" constant="8" id="n7G-JM-xjr"/>
+                    <constraint firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="uTH-JH-SRn" secondAttribute="bottom" constant="12" id="n7G-JM-xjr"/>
                     <constraint firstItem="61P-1x-zOX" firstAttribute="top" secondItem="uTH-JH-SRn" secondAttribute="top" id="oce-xp-dPk"/>
                     <constraint firstItem="cPf-cj-66h" firstAttribute="leading" secondItem="Vwp-Lo-by4" secondAttribute="leading" id="t2a-eE-uA4"/>
                     <constraint firstAttribute="trailing" secondItem="Vwp-Lo-by4" secondAttribute="trailing" constant="16" id="tBD-CN-kHq"/>
-                    <constraint firstAttribute="bottom" secondItem="cPf-cj-66h" secondAttribute="bottom" constant="8" id="vum-CT-5Ea"/>
+                    <constraint firstAttribute="bottom" secondItem="cPf-cj-66h" secondAttribute="bottom" constant="12" id="vum-CT-5Ea"/>
                 </constraints>
             </tableViewCellContentView>
             <connections>
